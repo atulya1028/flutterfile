@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -8,41 +9,54 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.red,
         appBar: AppBar(
+          backgroundColor: Colors.black,
           title: Center(
-            child: Text('This is my App',
-            style: TextStyle(color: Colors.white,),),
+            child: Text('Designing App',
+              style: TextStyle(color: Colors.green),
+            ),
           ),
-          backgroundColor: Colors.red,
         ),
         body:
-        SafeArea(
-          child: Container(
-            width: 500.0,
-           height: 800.0,
-           color: Colors.blue,
-           margin: EdgeInsets.fromLTRB(0.0, 20, 50, 0),
-           // width: MediaQuery.of(context).size.width,
-            //height: MediaQuery.of(context).size.height,
-            child: Center(
-              child: Container(
-                width: 500,
-                height: 200,
-                color: Colors.green,
-                child: Container(
-                  width: 50,
-                  height: 150,
-                  color: Colors.yellow,
-                  margin: EdgeInsets.fromLTRB(0,20 , 100, 200),
-                ),
+        Column(
+          children: [
+            Text('Hello',
+            style: TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+            ),),
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.blue,
+              child: Column(
+                children: [
+                  Text('Welcome',
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                    ),),
+                  Container(
+                    width: 450,
+                    height: 250,
+                    margin: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      border: Border(
+                        top: BorderSide(width: 50,color: Colors.red),
+                        left: BorderSide(width: 50,color: Colors.red),
+                        right: BorderSide(width: 50,color: Colors.red),
+                        bottom: BorderSide(width: 50,color: Colors.red),
+                      ),
+                    ),
+                    child: Container(
+                        )
+                      ),
+                ],
               ),
-
-            )
-
-              ),
+                  ),
+          ],
         ),
-          ),
+            ),
+
     );
   }
 }
